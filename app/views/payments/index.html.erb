@@ -1,0 +1,10 @@
+    Recent Payments:
+    <br><br>
+<%@payments.each_with_index do |payment| %>
+    Payed Date: <%=payment.payed_date.strftime("%A, %b %d, %Y")%>
+    <br>
+    Plan: <%=payment.internet_package.plan%>
+    <br>
+    Payed: $<%=payment.internet_package.price%>
+    <br><br><br>
+<%end%>

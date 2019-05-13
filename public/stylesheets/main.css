@@ -1,0 +1,98 @@
+.navbar-default{
+	background-color: #26C6DA;
+}
+
+.navbar-default .navbar-brand{
+	color: white;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color: white;
+}
+
+.active {
+
+}
+
+body {
+	background: url(https://source.unsplash.com/npxXWgQ33ZQ);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	color: #E3F2FD; 
+	}
+
+#content{
+	text-align: center;
+	padding-top: 15%;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				0px 8px 13px rgba(0,0,0,0.2),
+				0px 18px 23px rgba(0,0,0,0.1);
+}
+
+h1{
+	font-size: 5em;
+	text-shadow: 0px 4px 3px rgba(0,0,0,1),
+	           	 0px 8px 13px rgba(0,0,0,.5),
+	             0px 18px 23px rgba(0,0,0,.15);
+}
+h3{
+	 text-shadow:0px 4px 3px rgba(0,0,0,.4),
+	           	 0px 8px 13px rgba(0,0,0,.2),
+	             0px 18px 23px rgba(0,0,0,.1);
+}
+
+hr{
+	width: 400px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.jumbotron{
+	/*background: #18FFFF;*/
+	background: rgba(15,89,89,0.8);
+	text-align: center;
+}
+
+.row{
+	padding: 8% 0% 5% 0%;
+	
+}
+
+/*.btn-primary{
+	background: #D93240;
+}*/
+
+.btn-primary {
+	position: relative;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: rgba(219,87,5,1);
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 700;
+    display: block;
+    /*padding: 4px;*/
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    /*-webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);*/
+    -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
+    margin: auto;
+	width: 160px;
+	text-align: center;
+	
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+}
+
+.btn-primary:active {
+    -webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+}

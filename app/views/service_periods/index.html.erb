@@ -1,0 +1,10 @@
+    Recent Service Periods:
+    <br><br>
+<%@service_periods.each do |service_period| %>
+    Start Date: <%=service_period.start_time.strftime("%A, %b %d, %Y")%>
+    <br>
+    End Date: <%=service_period.end_time.strftime("%A, %b %d, %Y")%>
+    <br>
+    Plan: <%=service_period.internet_package.plan%>
+    <br><br><br>
+<%end%>

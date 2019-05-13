@@ -1,0 +1,22 @@
+<div class="container">
+		<div class="row">
+
+	
+
+			
+
+            <%@internet_packages.each do |internet_package| %>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div class="jumbotron">
+  					<h1><%=internet_package.plan %></h1>
+  					<p><%= internet_package.download_speed%> Megabytes for <i class="fa fa-usd" aria-hidden="true"></i><%=internet_package.price%> </p>
+  					
+                    <%=link_to "Purchase", internet_package_path(internet_package), { :class=>"btn btn-primary btn-lg" }%>
+				</div>
+			</div>
+
+            <%end %>
+
+			 
+		</div>
+</div>

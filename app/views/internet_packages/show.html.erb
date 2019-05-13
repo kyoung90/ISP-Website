@@ -1,0 +1,16 @@
+<div class="clearfix">
+    <h1>Plan <%=@internet_package.plan %></h1>
+    <br><br>
+    <ul>
+        <li>Price: $<%=@internet_package.price%> </li>
+        <li>Download Speed: <%=@internet_package.download_speed%> mbps</li>
+    </ul>
+
+    <br>
+    <%=form_for @internet_package.payments.build, url: internet_package_payments_path(@internet_package) do |f|%>
+
+        <%=f.hidden_field :months, value: 1%>
+        
+        <%=f.submit%>
+    <%end %>
+</div>
