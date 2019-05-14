@@ -4,6 +4,7 @@ class ServicePeriod < ApplicationRecord
 
     def self.create_or_find_and_update(internet_package, user, time, months)
         # cancel last service period if we change plan and create a internet status change
+        # update first nested if because the last end time should ways be higher than the time if there is any service period endtime which is greater than time
         if user.service_periods.count > 0 && user.service_periods.any?{|service_period| service_period.end_time > time }
             # last payment plan is the same as last service period plan
             if user.payments.last.internet_package.plan == user.service_periods.last.internet_package.plan && user.service_periods.last.end_time > time

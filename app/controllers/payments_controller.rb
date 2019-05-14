@@ -23,7 +23,6 @@ class PaymentsController < ApplicationController
                 
                 # this should happen after the internet connected
                 @service_period = ServicePeriod.create_or_find_and_update(internet_package, user, time, params[:payment][:months].to_i)
-
                 
                 # attempt mikrotik connection
 

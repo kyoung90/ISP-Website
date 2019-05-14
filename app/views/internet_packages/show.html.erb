@@ -6,11 +6,13 @@
         <li>Download Speed: <%=@internet_package.download_speed%> mbps</li>
     </ul>
 
-    <br>
     <%=form_for @internet_package.payments.build, url: internet_package_payments_path(@internet_package) do |f|%>
 
-        <%=f.hidden_field :months, value: 1%>
-        
+        <%=f.label :months%>
+        <br>
+        <%=f.number_field :months%>
+        <br>
+        <br>
         <%=f.submit%>
     <%end %>
 </div>
