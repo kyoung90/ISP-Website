@@ -7,12 +7,12 @@ class SessionController < ApplicationController
     def create
         if auth
             # add uid
-            @user = User.find_or_create_by(id: auth['uid']) do |u|
+            @user = User.find_or_create_by(uid: auth['uid']) do |u|
                 u.username = auth['info']['name']
                 u.email = auth['info']['email'] 
             end
             session[:user_id] = @user.id
-            redirect_to internet_packages_path
+            redirect_to root_path
 
         else 
             @user = User.find_by(username: user_params[:username])

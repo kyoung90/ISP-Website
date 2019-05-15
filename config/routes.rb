@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   post "/login", to: "session#create", as: "session_create"
   get '/auth/facebook/callback' => 'session#create'
 
+  get "/", to: "application#home", as: "root"  
+
 end
