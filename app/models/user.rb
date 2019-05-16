@@ -10,6 +10,9 @@ class User < ApplicationRecord
 
     has_secure_password validations: false
 
+    validates :email, presence: true
+    validates :username, presence: true
+
     # Make this return a boolean, it should return true or false on successfull reply 
     def activate_internet
         activated = false
