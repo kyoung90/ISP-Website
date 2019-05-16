@@ -39,8 +39,8 @@ Please feel free to contribute :)
 
 ## Authors
 
-* **kyoung** - *Initial work* - [kyoung90](https://github.com/kyoung90) 
-* **epeña** - *Hardware and all network setup*  
+* **kyoung** - [kyoung90](https://github.com/kyoung90) 
+* **epeña** 
 
 See also the list of [contributors](https://github.com/kyoung90/country/graphs/contributors) who participated in this project.
 
