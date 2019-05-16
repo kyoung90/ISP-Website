@@ -12,12 +12,23 @@ class ServicePeriod < ApplicationRecord
                 service_period.end_time = service_period.end_time + (months * 30).days
                 service_period.save
                 service_period
+                
+                last_internet_status_change = user.internet_status_changes.last
+                last_internet_status_change.active = false
+                last_internet_status_change.save
+
+                user.internet_status_changes.create(active: true, comment: "Previous Service Updated.")
             else
                 last_service_period = user.service_periods.last
                 last_service_period.end_time = time 
                 last_service_period.save 
 
                 ServicePeriod.create(internet_package_id: internet_package.id, user_id: user.id, start_time: time, end_time: time + (30 * months).days)
+                
+                last_internet_status_change = user.internet_status_changes.last
+                last_internet_status_change.active = false
+                last_internet_status_change.save
+                user.internet_status_changes.create(active: true, comment: "Previous service period canceled. New service period created.")
             end 
                 # service_period = user.service_periods.find{|service_period| service_period.end_time > time}
                 # service_period.end_time = end_time + (months * 30).days
@@ -25,6 +36,7 @@ class ServicePeriod < ApplicationRecord
                 # service_period
         else 
             ServicePeriod.create(internet_package_id: internet_package.id, user_id: user.id, start_time: time, end_time: time + (30 * months).days)
+            user.internet_status_changes.create(active: true, comment: "New service period created.")
         end 
     end 
 end

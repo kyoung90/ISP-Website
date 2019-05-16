@@ -1,0 +1,9 @@
+<%= form_for @user, url: {action: "update"} do |f| %>
+    <%=f.label :email%>
+    <br>
+    <%=f.text_field :email%>
+    <br>
+    <br>
+
+    <%=f.submit%>
+<%end%>

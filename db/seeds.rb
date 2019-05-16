@@ -16,6 +16,6 @@
 
 
 @payments = Payment.create(user_id: @user.id, internet_package_id: @internet_package.id, payed_date: DateTime.now, months: 1000)
-@internetStatusChange = InternetStatusChange.create(active: true, comment: "Initialized Plan", user_id: @user.id)
+@internetStatusChange = InternetStatusChange.create(active: true, comment: "New service period created.", user_id: @user.id)
 
 @service_period = ServicePeriod.create(user_id: @user.id, internet_package_id: @internet_package.id, start_time: DateTime.now, end_time: DateTime.now + 30.days)

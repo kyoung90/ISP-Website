@@ -1,10 +1,44 @@
-    Recent Service Periods:
-    <br><br>
-<%@service_periods.each do |service_period| %>
-    Start Date: <%=service_period.start_time.strftime("%A, %b %d, %Y")%>
-    <br>
-    End Date: <%=service_period.end_time.strftime("%A, %b %d, %Y")%>
-    <br>
-    Plan: <%=service_period.internet_package.plan%>
-    <br><br><br>
-<%end%>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10">
+            <div class="panel panel-info">
+            
+                <div class="panel-heading">
+                    <h2 class="panel-title">
+                        Service Periods
+                    </h2>
+                </div>
+                <div class="panel-body">
+                    <h3>
+                    
+                        <%=@service_periods.first.user.email%>
+                    </h3>
+                </div>
+                    <ul class="list-group">
+                    
+                    <li class="list-group-item">
+        
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Plan</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <%@service_periods.each do |service_period| %>
+                            <tr>
+                                <td>$<%=service_period.internet_package.plan%></td>
+                                <td><%=service_period.start_time.strftime("%A, %b %d, %Y")%></td>
+                                <td><%=service_period.end_time.strftime("%A, %b %d, %Y")%></td>
+                            </tr> 
+                        <%end%>
+                        </tbody>
+                    </table>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

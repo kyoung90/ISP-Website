@@ -16,11 +16,18 @@ class UserController < ApplicationController
     end 
 
     def edit
-
+        if current_user
+            @user = User.find_by(id: current_user)
+        else 
+            redirect_to new_session_path, alert: "You must be logged in to do that."
+        end 
     end 
 
     def update
+        user = User.find_by(id: params[:id])
+        user.update(user_params)
 
+        redirect_to user_path(user)
     end 
 
     def show

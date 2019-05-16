@@ -5,13 +5,13 @@
             
                 <div class="panel-heading">
                     <h2 class="panel-title">
-                        Payment History
+                        Internet Status Changes
                     </h2>
                 </div>
                 <div class="panel-body">
                     <h3>
                     
-                        <%=@payments.first.user.email%>
+                        <%=@internet_status_changes.first.user.email%>
                     </h3>
                 </div>
                     <ul class="list-group">
@@ -21,23 +21,19 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Plan</th>
-                                <th>Payed Date</th>
-                                <th>Months</th>
-                                <th>Amount Payed</th>
+                                <th>Active</th>
+                                <th>Comment</th>
+                                <th>Date Created At</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <%@payments.each do |payment| %>
+                        <%@internet_status_changes.each do |internet_status_change| %>
                             <tr>
-                                <td><%=payment.internet_package.plan%></td>
-                                <td><%=payment.payed_date.strftime("%A, %b %d, %Y")%></td>
-                                <td><%=payment.months%></td>
-                                <td>$<%=sprintf('%.2f', (payment.internet_package.price * payment.months))%></td>
+                                <td><%=internet_status_change.active%></td>
+                                <td><%=internet_status_change.comment%></td>
+                                <td><%=internet_status_change.created_at.strftime("%A, %b %d, %Y")%></td>
                             </tr> 
                         <%end%>
-                           
-
                         </tbody>
                     </table>
                     </li>

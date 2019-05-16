@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
   end 
 
+  resources :internet_status_changes, only: [:index]
+
   resources :service_periods, only: [:index]
   # resources :session, only: [:new, :create]
   get "/logout", to: "session#destroy", as: "logout"

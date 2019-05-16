@@ -1,3 +1,8 @@
-<%=@user.username %>
-<br>
-<%=@user.email%>
+<div class="clearfix">
+    <%=@user.username %>
+    <br>
+    <%=@user.email%>
+
+    <br><br>
+    <%= link_to "edit", edit_user_path(@user)%>
+</div>
